@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string name="app_name">MyActivity</string>
+
+   <!-- home page -->
+   <string name="goto_animals_text">Go To Animals</string>
+   <string name="goto_hex_text">Go To Sample Hex</string>
+
+
+   <!-- animals -->
+   <string name="Mammals">Mammals</string>
+   <string name="Reptiles">Reptiles</string>
+   <string name="Birds">Birds</string>
+   <string name="Amphibians">Amphibians</string>
+   <string name="Arachnids">Arachnids</string>
+   <string name="Insects">Insects</string>
+
+   <!-- elements -->
+   <string name="Meat">Meat</string>
+   <string name="Sun">Sun</string>
+   <string name="Seeds">Seeds</string>
+   <string name="Water">Water</string>
+   <string name="Grub">Grub</string>
+   <string name="Grass">Grass</string>
+
+   <string name="Meat_short">M</string>
+   <string name="Sun_short">S</string>
+   <string name="Seeds_short">N</string>
+   <string name="Water_short">W</string>
+   <string name="Grub_short">B</string>
+   <string name="Grass_short">G</string>
+   <string name="empty_short">0</string>
+
+   <!-- element references -->
+   <string name="ME1">ME1</string>
+   <string name="ME2">ME2</string>
+   <string name="ME3">ME3</string>
+   <string name="ME4">ME4</string>
+   <string name="ME5">ME5</string>
+   <string name="ME6">ME6</string>
+   <string name="RE1">RE1</string>
+   <string name="RE2">RE2</string>
+   <string name="RE3">RE3</string>
+   <string name="RE4">RE4</string>
+   <string name="RE5">RE5</string>
+   <string name="RE6">RE6</string>
+   <string name="BE1">BE1</string>
+   <string name="BE2">BE2</string>
+   <string name="BE3">BE3</string>
+   <string name="BE4">BE4</string>
+   <string name="BE5">BE5</string>
+   <string name="BE6">BE6</string>
+   <string name="AE1">AE1</string>
+   <string name="AE2">AE2</string>
+   <string name="AE3">AE3</string>
+   <string name="AE4">AE4</string>
+   <string name="AE5">AE5</string>
+   <string name="AE6">AE6</string>
+   <string name="SE1">SE1</string>
+   <string name="SE2">SE2</string>
+   <string name="SE3">SE3</string>
+   <string name="SE4">SE4</string>
+   <string name="SE5">SE5</string>
+   <string name="SE6">SE6</string>
+   <string name="IE1">IE1</string>
+   <string name="IE2">IE2</string>
+   <string name="IE3">IE3</string>
+   <string name="IE4">IE4</string>
+   <string name="IE5">IE5</string>
+   <string name="IE6">IE6</string>
+
+
+
+   <string name="empty"> </string>
+
+   <!-- widget references -->
+   <string name="button_goto_animals">button_goto_animals</string>
+   <string name="button_goto_hex">button_goto_animals</string>
+   <string name="AnimalElements">Animal Elements</string>
+
+</resources>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_height="wrap_content"
+             android:layout_width="fill_parent"
+             android:stretchColumns="*">
+   <TableRow>
+      <TextView android:text="@string/Mammals" />
+      <Button android:enabled="false" android:text="@string/Meat_short" android:id="@string/ME1"/>
+      <Button android:enabled="false" android:text="@string/Meat_short" android:id="@string/ME2"/>
+      <Button android:text="@string/empty_short" android:id="@string/ME3" />
+      <Button android:text="@string/empty_short" android:id="@string/ME4" />
+      <Button android:text="@string/empty_short" android:id="@string/ME5" />
+      <Button android:text="@string/empty_short" android:id="@string/ME6" />
+   </TableRow>
+   <TableRow>
+      <TextView android:text="@string/Reptiles" />
+      <Button android:enabled="false" android:text="@string/Sun_short" android:id="@string/RE1"/>
+      <Button android:enabled="false" android:text="@string/Sun_short" android:id="@string/RE2"/>
+      <Button android:text="@string/empty_short" android:id="@string/RE3" />
+      <Button android:text="@string/empty_short" android:id="@string/RE4" />
+      <Button android:text="@string/empty_short" android:id="@string/RE5" />
+      <Button android:text="@string/empty_short" android:id="@string/RE6" />
+   </TableRow>
+   <TableRow>
+      <TextView android:text="@string/Birds" />
+      <Button android:enabled="false" android:text="@string/Seeds_short" android:id="@string/BE1"/>
+      <Button android:enabled="false" android:text="@string/Seeds_short" android:id="@string/BE2"/>
+      <Button android:text="@string/empty_short" android:id="@string/BE3" />
+      <Button android:text="@string/empty_short" android:id="@string/BE4" />
+      <Button android:text="@string/empty_short" android:id="@string/BE5" />
+      <Button android:text="@string/empty_short" android:id="@string/BE6" />
+   </TableRow>
+   <TableRow>
+      <TextView android:text="@string/Amphibians" />
+      <Button android:enabled="false" android:text="@string/Water_short" android:id="@string/AE1"/>
+      <Button android:enabled="false" android:text="@string/Water_short" android:id="@string/AE2"/>
+      <Button android:enabled="false" android:text="@string/Water_short" android:id="@string/AE3"/>
+      <Button android:text="@string/empty_short" android:id="@string/AE4" />
+      <Button android:text="@string/empty_short" android:id="@string/AE5" />
+      <Button android:text="@string/empty_short" android:id="@string/AE6" />
+   </TableRow>
+   <TableRow>
+      <TextView android:text="@string/Arachnids" />
+      <Button android:enabled="false" android:text="@string/Grub_short" android:id="@string/SE1"/>
+      <Button android:enabled="false" android:text="@string/Grub_short" android:id="@string/SE2"/>
+      <Button android:text="@string/empty_short" android:id="@string/SE3"/>
+      <Button android:text="@string/empty_short" android:id="@string/SE4" />
+      <Button android:text="@string/empty_short" android:id="@string/SE5" />
+      <Button android:text="@string/empty_short" android:id="@string/SE6" />
+   </TableRow>
+   <TableRow>
+      <TextView android:text="@string/Insects" />
+      <Button android:enabled="false" android:text="@string/Grass_short" android:id="@string/IE1"/>
+      <Button android:enabled="false" android:text="@string/Grass_short" android:id="@string/IE2"/>
+      <Button android:text="@string/empty_short" android:id="@string/IE3" />
+      <Button android:text="@string/empty_short" android:id="@string/IE4" />
+      <Button android:text="@string/empty_short" android:id="@string/IE5" />
+      <Button android:text="@string/empty_short" android:id="@string/IE6" />
+   </TableRow>
+
+   <Button
+           android:layout_width="fill_parent"
+           android:layout_height="fill_parent"
+           android:text="Go To Hex View"
+           android:id="@string/button_goto_hex"
+           />
+</TableLayout>
