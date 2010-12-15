@@ -4,64 +4,79 @@
              android:layout_width="fill_parent"
              android:stretchColumns="*">
    <TableRow>
-      <TextView android:text="@string/Mammals" />
+      <Button android:text="@string/Mammals" android:id="@string/button_mammals" />
+      <TextView android:text="0" android:id="@string/text_score_mammals"/>
       <Button android:enabled="false" android:text="@string/Meat_short" android:id="@string/ME1"/>
       <Button android:enabled="false" android:text="@string/Meat_short" android:id="@string/ME2"/>
-      <Button android:text="@string/empty_short" android:id="@string/ME3" />
-      <Button android:text="@string/empty_short" android:id="@string/ME4" />
-      <Button android:text="@string/empty_short" android:id="@string/ME5" />
-      <Button android:text="@string/empty_short" android:id="@string/ME6" />
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/ME3" />
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/ME4" />
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/ME5" />
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/ME6" />
    </TableRow>
    <TableRow>
-      <TextView android:text="@string/Reptiles" />
+      <Button android:text="@string/Reptiles" android:id="@string/button_reptiles" />
+      <TextView android:text="0" android:id="@string/text_score_reptiles"/>
       <Button android:enabled="false" android:text="@string/Sun_short" android:id="@string/RE1"/>
       <Button android:enabled="false" android:text="@string/Sun_short" android:id="@string/RE2"/>
-      <Button android:text="@string/empty_short" android:id="@string/RE3" />
-      <Button android:text="@string/empty_short" android:id="@string/RE4" />
-      <Button android:text="@string/empty_short" android:id="@string/RE5" />
-      <Button android:text="@string/empty_short" android:id="@string/RE6" />
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/RE3" />
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/RE4" />
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/RE5" />
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/RE6" />
    </TableRow>
    <TableRow>
-      <TextView android:text="@string/Birds" />
+      <Button android:text="@string/Birds" android:id="@string/button_birds" />
+      <TextView android:text="0" android:id="@string/text_score_birds"/>
       <Button android:enabled="false" android:text="@string/Seeds_short" android:id="@string/BE1"/>
       <Button android:enabled="false" android:text="@string/Seeds_short" android:id="@string/BE2"/>
-      <Button android:text="@string/empty_short" android:id="@string/BE3" />
-      <Button android:text="@string/empty_short" android:id="@string/BE4" />
-      <Button android:text="@string/empty_short" android:id="@string/BE5" />
-      <Button android:text="@string/empty_short" android:id="@string/BE6" />
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/BE3" />
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/BE4" />
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/BE5" />
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/BE6" />
    </TableRow>
    <TableRow>
-      <TextView android:text="@string/Amphibians" />
+      <Button android:text="@string/Amphibians" android:id="@string/button_amphibians" />
+      <TextView android:text="0" android:id="@string/text_score_amphibians"/>
       <Button android:enabled="false" android:text="@string/Water_short" android:id="@string/AE1"/>
       <Button android:enabled="false" android:text="@string/Water_short" android:id="@string/AE2"/>
       <Button android:enabled="false" android:text="@string/Water_short" android:id="@string/AE3"/>
-      <Button android:text="@string/empty_short" android:id="@string/AE4" />
-      <Button android:text="@string/empty_short" android:id="@string/AE5" />
-      <Button android:text="@string/empty_short" android:id="@string/AE6" />
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/AE4" />
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/AE5" />
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/AE6" />
    </TableRow>
    <TableRow>
-      <TextView android:text="@string/Arachnids" />
+      <Button android:text="@string/Arachnids" android:id="@string/button_arachnids" />
+      <TextView android:text="0" android:id="@string/text_score_arachnids"/>
       <Button android:enabled="false" android:text="@string/Grub_short" android:id="@string/SE1"/>
       <Button android:enabled="false" android:text="@string/Grub_short" android:id="@string/SE2"/>
-      <Button android:text="@string/empty_short" android:id="@string/SE3"/>
-      <Button android:text="@string/empty_short" android:id="@string/SE4" />
-      <Button android:text="@string/empty_short" android:id="@string/SE5" />
-      <Button android:text="@string/empty_short" android:id="@string/SE6" />
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/SE3"/>
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/SE4" />
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/SE5" />
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/SE6" />
    </TableRow>
    <TableRow>
-      <TextView android:text="@string/Insects" />
+      <Button android:text="@string/Insects" android:id="@string/button_insects" />
+      <TextView android:text="0" android:id="@string/text_score_insects"/>
       <Button android:enabled="false" android:text="@string/Grass_short" android:id="@string/IE1"/>
       <Button android:enabled="false" android:text="@string/Grass_short" android:id="@string/IE2"/>
-      <Button android:text="@string/empty_short" android:id="@string/IE3" />
-      <Button android:text="@string/empty_short" android:id="@string/IE4" />
-      <Button android:text="@string/empty_short" android:id="@string/IE5" />
-      <Button android:text="@string/empty_short" android:id="@string/IE6" />
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/IE3" />
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/IE4" />
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/IE5" />
+      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/IE6" />
    </TableRow>
 
-   <Button
-           android:layout_width="fill_parent"
-           android:layout_height="fill_parent"
-           android:text="Go To Hex View"
-           android:id="@string/button_goto_hex"
-           />
+   <TextView android:text="@string/empty"/>
+   <TextView android:text="@string/empty" android:id="@string/text_dominance"/>
+   <TextView android:text="@string/empty"/>
+
+   <TableRow>
+      <TextView android:text="@string/Hex" />
+      <TextView android:text="@string/empty" />
+      <Button android:text="@string/empty_short" android:id="@string/HE1" />
+      <Button android:text="@string/empty_short" android:id="@string/HE2" />
+      <Button android:text="@string/empty_short" android:id="@string/HE3" />
+      <Button android:text="@string/empty_short" android:id="@string/HE4" />
+      <Button android:text="@string/empty_short" android:id="@string/HE5" />
+      <Button android:text="@string/empty_short" android:id="@string/HE6" />
+   </TableRow>
+
 </TableLayout>
