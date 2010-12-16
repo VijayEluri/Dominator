@@ -1,82 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_height="wrap_content"
-             android:layout_width="fill_parent"
-             android:stretchColumns="*">
-   <TableRow>
-      <Button android:text="@string/Mammals" android:id="@string/button_mammals" />
-      <TextView android:text="0" android:id="@string/text_score_mammals"/>
-      <Button android:enabled="false" android:text="@string/Meat_short" android:id="@string/ME1"/>
-      <Button android:enabled="false" android:text="@string/Meat_short" android:id="@string/ME2"/>
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/ME3" />
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/ME4" />
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/ME5" />
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/ME6" />
-   </TableRow>
-   <TableRow>
-      <Button android:text="@string/Reptiles" android:id="@string/button_reptiles" />
-      <TextView android:text="0" android:id="@string/text_score_reptiles"/>
-      <Button android:enabled="false" android:text="@string/Sun_short" android:id="@string/RE1"/>
-      <Button android:enabled="false" android:text="@string/Sun_short" android:id="@string/RE2"/>
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/RE3" />
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/RE4" />
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/RE5" />
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/RE6" />
-   </TableRow>
-   <TableRow>
-      <Button android:text="@string/Birds" android:id="@string/button_birds" />
-      <TextView android:text="0" android:id="@string/text_score_birds"/>
-      <Button android:enabled="false" android:text="@string/Seeds_short" android:id="@string/BE1"/>
-      <Button android:enabled="false" android:text="@string/Seeds_short" android:id="@string/BE2"/>
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/BE3" />
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/BE4" />
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/BE5" />
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/BE6" />
-   </TableRow>
-   <TableRow>
-      <Button android:text="@string/Amphibians" android:id="@string/button_amphibians" />
-      <TextView android:text="0" android:id="@string/text_score_amphibians"/>
-      <Button android:enabled="false" android:text="@string/Water_short" android:id="@string/AE1"/>
-      <Button android:enabled="false" android:text="@string/Water_short" android:id="@string/AE2"/>
-      <Button android:enabled="false" android:text="@string/Water_short" android:id="@string/AE3"/>
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/AE4" />
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/AE5" />
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/AE6" />
-   </TableRow>
-   <TableRow>
-      <Button android:text="@string/Arachnids" android:id="@string/button_arachnids" />
-      <TextView android:text="0" android:id="@string/text_score_arachnids"/>
-      <Button android:enabled="false" android:text="@string/Grub_short" android:id="@string/SE1"/>
-      <Button android:enabled="false" android:text="@string/Grub_short" android:id="@string/SE2"/>
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/SE3"/>
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/SE4" />
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/SE5" />
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/SE6" />
-   </TableRow>
-   <TableRow>
-      <Button android:text="@string/Insects" android:id="@string/button_insects" />
-      <TextView android:text="0" android:id="@string/text_score_insects"/>
-      <Button android:enabled="false" android:text="@string/Grass_short" android:id="@string/IE1"/>
-      <Button android:enabled="false" android:text="@string/Grass_short" android:id="@string/IE2"/>
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/IE3" />
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/IE4" />
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/IE5" />
-      <Button android:enabled="false" android:text="@string/empty_short" android:id="@string/IE6" />
-   </TableRow>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+        >
+   <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:stretchColumns="*"
+                android:scrollbars="vertical">
+      <TableRow>
+         <ImageButton android:src="@drawable/mammal" android:id="@+id/button_mammal" android:background="#80ffffff" android:padding="4dip" android:gravity="center" />
+         <TextView android:text="0" android:id="@+id/text_score_mammals" android:gravity="center" android:padding="4dip" />
+         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/ME1" android:gravity="center" />
+         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/ME2" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/ME3" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/ME4" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/ME5" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/ME6" android:gravity="center" />
+      </TableRow>
+      <TableRow>
+         <ImageButton android:src="@drawable/reptile" android:id="@+id/button_reptile" android:background="#80ff0000" android:padding="4dip" android:gravity="center" />
+         <TextView android:text="0" android:id="@+id/text_score_reptiles" android:gravity="center" android:padding="4dip" />
+         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/RE1" android:gravity="center" />
+         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/RE2" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/RE3" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/RE4" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/RE5" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/RE6" android:gravity="center" />
+      </TableRow>
+      <TableRow>
+         <ImageButton android:src="@drawable/bird" android:id="@+id/button_bird" android:background="#80ffff80" android:padding="4dip" android:gravity="center" />
+         <TextView android:text="0" android:id="@+id/text_score_birds" android:gravity="center" android:padding="4dip" />
+         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/BE1" android:gravity="center" />
+         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/BE2" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/BE3" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/BE4" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/BE5" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/BE6" android:gravity="center" />
+      </TableRow>
+      <TableRow>
+         <ImageButton android:src="@drawable/amphibian" android:id="@+id/button_amphibian" android:background="#8000ffff" android:padding="4dip" android:gravity="center" />
+         <TextView android:text="0" android:id="@+id/text_score_amphibians" android:gravity="center" android:padding="4dip" />
+         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/AE1" android:gravity="center" />
+         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/AE2" android:gravity="center" />
+         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/AE3" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/AE4" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/AE5" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/AE6" android:gravity="center" />
+      </TableRow>
+      <TableRow>
+         <ImageButton android:src="@drawable/arachnid" android:id="@+id/button_arachnid" android:background="#80000000" android:padding="4dip" android:gravity="center" />
+         <TextView android:text="0" android:id="@+id/text_score_arachnids" android:gravity="center" android:padding="4dip" />
+         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/SE1" android:gravity="center" />
+         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/SE2" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/SE3" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/SE4" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/SE5" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/SE6" android:gravity="center" />
+      </TableRow>
+      <TableRow>
+         <ImageButton android:src="@drawable/insect" android:id="@+id/button_insect" android:background="#8000ff00" android:padding="4dip" android:gravity="center" />
+         <TextView android:text="0" android:id="@+id/text_score_insects" android:gravity="center" android:padding="4dip" />
+         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/IE1" android:gravity="center" />
+         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/IE2" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/IE3" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/IE4" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/IE5" android:gravity="center" />
+         <ImageButton style="@style/element_none" android:id="@+id/IE6" android:gravity="center" />
+      </TableRow>
 
-   <TextView android:text="@string/empty"/>
-   <TextView android:text="@string/empty" android:id="@string/text_dominance"/>
-   <TextView android:text="@string/empty"/>
-
-   <TableRow>
-      <TextView android:text="@string/Hex" />
       <TextView android:text="@string/empty" />
-      <Button android:text="@string/empty_short" android:id="@string/HE1" />
-      <Button android:text="@string/empty_short" android:id="@string/HE2" />
-      <Button android:text="@string/empty_short" android:id="@string/HE3" />
-      <Button android:text="@string/empty_short" android:id="@string/HE4" />
-      <Button android:text="@string/empty_short" android:id="@string/HE5" />
-      <Button android:text="@string/empty_short" android:id="@string/HE6" />
-   </TableRow>
+      <TextView android:text="@string/empty" android:id="@+id/text_dominance" />
+      <TextView android:text="@string/empty" />
 
-</TableLayout>
+      <TableRow>
+         <TextView android:text="@string/Hex" android:gravity="center" />
+         <TextView android:text="@string/empty" android:gravity="center" />
+         <ImageButton style="@style/element_empty" android:id="@+id/HE1" android:gravity="center" />
+         <ImageButton style="@style/element_empty" android:id="@+id/HE2" android:gravity="center" />
+         <ImageButton style="@style/element_empty" android:id="@+id/HE3" android:gravity="center" />
+         <ImageButton style="@style/element_empty" android:id="@+id/HE4" android:gravity="center" />
+         <ImageButton style="@style/element_empty" android:id="@+id/HE5" android:gravity="center" />
+         <ImageButton style="@style/element_empty" android:id="@+id/HE6" android:gravity="center" />
+      </TableRow>
+
+   </TableLayout>
+</ScrollView>

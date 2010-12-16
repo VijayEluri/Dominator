@@ -21,7 +21,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.EnumSet;
@@ -31,7 +31,7 @@ import java.util.Set;
 
 public class AnimalElements extends Activity {
 
-    Map<Animals, Button[]> animalButtons;
+    Map<Animals, ImageButton[]> animalButtons;
     Map<Animals, AnimalModel> animalModels;
     Map<Animals, TextView> scores;
     Set<Animals> relevantAnimals;
@@ -39,72 +39,72 @@ public class AnimalElements extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.animal_elements);
-        animalButtons = new HashMap<Animals, Button[]>();
+        animalButtons = new HashMap<Animals, ImageButton[]>();
 
-        animalButtons.put(Animals.Mammals, new Button[] {
-                (Button) findViewById(R.string.ME1),
-                (Button) findViewById(R.string.ME2),
-                (Button) findViewById(R.string.ME3),
-                (Button) findViewById(R.string.ME4),
-                (Button) findViewById(R.string.ME5),
-                (Button) findViewById(R.string.ME6),
+        animalButtons.put(Animals.Mammals, new ImageButton[] {
+                (ImageButton) findViewById(R.id.ME1),
+                (ImageButton) findViewById(R.id.ME2),
+                (ImageButton) findViewById(R.id.ME3),
+                (ImageButton) findViewById(R.id.ME4),
+                (ImageButton) findViewById(R.id.ME5),
+                (ImageButton) findViewById(R.id.ME6),
         });
-        animalButtons.put(Animals.Reptiles, new Button[] {
-                (Button) findViewById(R.string.RE1),
-                (Button) findViewById(R.string.RE2),
-                (Button) findViewById(R.string.RE3),
-                (Button) findViewById(R.string.RE4),
-                (Button) findViewById(R.string.RE5),
-                (Button) findViewById(R.string.RE6),
+        animalButtons.put(Animals.Reptiles, new ImageButton[] {
+                (ImageButton) findViewById(R.id.RE1),
+                (ImageButton) findViewById(R.id.RE2),
+                (ImageButton) findViewById(R.id.RE3),
+                (ImageButton) findViewById(R.id.RE4),
+                (ImageButton) findViewById(R.id.RE5),
+                (ImageButton) findViewById(R.id.RE6),
         });
-        animalButtons.put(Animals.Birds, new Button[] {
-                (Button) findViewById(R.string.BE1),
-                (Button) findViewById(R.string.BE2),
-                (Button) findViewById(R.string.BE3),
-                (Button) findViewById(R.string.BE4),
-                (Button) findViewById(R.string.BE5),
-                (Button) findViewById(R.string.BE6),
+        animalButtons.put(Animals.Birds, new ImageButton[] {
+                (ImageButton) findViewById(R.id.BE1),
+                (ImageButton) findViewById(R.id.BE2),
+                (ImageButton) findViewById(R.id.BE3),
+                (ImageButton) findViewById(R.id.BE4),
+                (ImageButton) findViewById(R.id.BE5),
+                (ImageButton) findViewById(R.id.BE6),
         });
-        animalButtons.put(Animals.Amphibians, new Button[] {
-                (Button) findViewById(R.string.AE1),
-                (Button) findViewById(R.string.AE2),
-                (Button) findViewById(R.string.AE3),
-                (Button) findViewById(R.string.AE4),
-                (Button) findViewById(R.string.AE5),
-                (Button) findViewById(R.string.AE6),
+        animalButtons.put(Animals.Amphibians, new ImageButton[] {
+                (ImageButton) findViewById(R.id.AE1),
+                (ImageButton) findViewById(R.id.AE2),
+                (ImageButton) findViewById(R.id.AE3),
+                (ImageButton) findViewById(R.id.AE4),
+                (ImageButton) findViewById(R.id.AE5),
+                (ImageButton) findViewById(R.id.AE6),
         });
-        animalButtons.put(Animals.Arachnids, new Button[] {
-                (Button) findViewById(R.string.SE1),
-                (Button) findViewById(R.string.SE2),
-                (Button) findViewById(R.string.SE3),
-                (Button) findViewById(R.string.SE4),
-                (Button) findViewById(R.string.SE5),
-                (Button) findViewById(R.string.SE6),
+        animalButtons.put(Animals.Arachnids, new ImageButton[] {
+                (ImageButton) findViewById(R.id.SE1),
+                (ImageButton) findViewById(R.id.SE2),
+                (ImageButton) findViewById(R.id.SE3),
+                (ImageButton) findViewById(R.id.SE4),
+                (ImageButton) findViewById(R.id.SE5),
+                (ImageButton) findViewById(R.id.SE6),
         });
-        animalButtons.put(Animals.Insects, new Button[] {
-                (Button) findViewById(R.string.IE1),
-                (Button) findViewById(R.string.IE2),
-                (Button) findViewById(R.string.IE3),
-                (Button) findViewById(R.string.IE4),
-                (Button) findViewById(R.string.IE5),
-                (Button) findViewById(R.string.IE6),
+        animalButtons.put(Animals.Insects, new ImageButton[] {
+                (ImageButton) findViewById(R.id.IE1),
+                (ImageButton) findViewById(R.id.IE2),
+                (ImageButton) findViewById(R.id.IE3),
+                (ImageButton) findViewById(R.id.IE4),
+                (ImageButton) findViewById(R.id.IE5),
+                (ImageButton) findViewById(R.id.IE6),
         });
-        animalButtons.put(null, new Button[] {
-                (Button) findViewById(R.string.HE1),
-                (Button) findViewById(R.string.HE2),
-                (Button) findViewById(R.string.HE3),
-                (Button) findViewById(R.string.HE4),
-                (Button) findViewById(R.string.HE5),
-                (Button) findViewById(R.string.HE6),
+        animalButtons.put(null, new ImageButton[] {
+                (ImageButton) findViewById(R.id.HE1),
+                (ImageButton) findViewById(R.id.HE2),
+                (ImageButton) findViewById(R.id.HE3),
+                (ImageButton) findViewById(R.id.HE4),
+                (ImageButton) findViewById(R.id.HE5),
+                (ImageButton) findViewById(R.id.HE6),
         });
 
         scores = new HashMap<Animals, TextView>();
-        scores.put(Animals.Mammals,    (TextView) findViewById(R.string.text_score_mammals));
-        scores.put(Animals.Reptiles,   (TextView) findViewById(R.string.text_score_reptiles));
-        scores.put(Animals.Birds,      (TextView) findViewById(R.string.text_score_birds));
-        scores.put(Animals.Amphibians, (TextView) findViewById(R.string.text_score_amphibians));
-        scores.put(Animals.Arachnids,  (TextView) findViewById(R.string.text_score_arachnids));
-        scores.put(Animals.Insects,    (TextView) findViewById(R.string.text_score_insects));
+        scores.put(Animals.Mammals,    (TextView) findViewById(R.id.text_score_mammals));
+        scores.put(Animals.Reptiles,   (TextView) findViewById(R.id.text_score_reptiles));
+        scores.put(Animals.Birds,      (TextView) findViewById(R.id.text_score_birds));
+        scores.put(Animals.Amphibians, (TextView) findViewById(R.id.text_score_amphibians));
+        scores.put(Animals.Arachnids,  (TextView) findViewById(R.id.text_score_arachnids));
+        scores.put(Animals.Insects,    (TextView) findViewById(R.id.text_score_insects));
 
         animalModels = new HashMap<Animals, AnimalModel>();
         animalModels.put(Animals.Mammals,    new AnimalModel(Animals.Mammals,    Elements.Meat,  Elements.Meat,  null, null, null, null));
@@ -115,12 +115,14 @@ public class AnimalElements extends Activity {
         animalModels.put(Animals.Insects,    new AnimalModel(Animals.Insects,    Elements.Grass, Elements.Grass, null, null, null, null));
         animalModels.put(null,               new AnimalModel(null,               null,           null,           null, null, null, null));
 
-        for (Map.Entry<Animals, Button[]> entry : animalButtons.entrySet()) {
+        for (Map.Entry<Animals, ImageButton[]> entry : animalButtons.entrySet()) {
             final Animals animal = entry.getKey();
-            Button[] buttons = entry.getValue();
-            for (int i = buttons.length-1; i >=0  ; i--) {
-                final Button button = buttons[i];
-                final int buttonPos = i;
+            int switchPoint = Animals.Amphibians.equals(animal) ? 3 : (animal == null ? 0 : 2);
+
+            ImageButton[] ImageButtons = entry.getValue();
+            for (int i = ImageButtons.length-1; i >= switchPoint  ; i--) {
+                final ImageButton ImageButton = ImageButtons[i];
+                final int ImageButtonPos = i;
                 final DialogInterface.OnClickListener callback = new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogInterface, int index) {
                         Elements element;
@@ -129,12 +131,12 @@ public class AnimalElements extends Activity {
                         } else {
                             element = Elements.values()[index];
                         }
-                        animalModels.get(animal).elements[buttonPos] = element;
-                        button.setText(shortForm(element));
+                        animalModels.get(animal).elements[ImageButtonPos] = element;
+                        ImageButton.setImageResource(shortForm(element));
                         recalculateDominance();
                     }
                 };
-                button.setOnClickListener(new View.OnClickListener() {
+                ImageButton.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View view) {
                         showElementChooser(callback);
                     }
@@ -143,28 +145,36 @@ public class AnimalElements extends Activity {
         }
 
         relevantAnimals = EnumSet.noneOf(Animals.class);
-        bindAnimalsButton(Animals.Mammals,    (Button) findViewById(R.string.button_mammals));
-        bindAnimalsButton(Animals.Reptiles,   (Button) findViewById(R.string.button_reptiles));
-        bindAnimalsButton(Animals.Birds,      (Button) findViewById(R.string.button_birds));
-        bindAnimalsButton(Animals.Amphibians, (Button) findViewById(R.string.button_amphibians));
-        bindAnimalsButton(Animals.Arachnids,  (Button) findViewById(R.string.button_arachnids));
-        bindAnimalsButton(Animals.Insects,    (Button) findViewById(R.string.button_insects));
+        bindAnimalsButton(Animals.Mammals,    (ImageButton) findViewById(R.id.button_mammal));
+        bindAnimalsButton(Animals.Reptiles,   (ImageButton) findViewById(R.id.button_reptile));
+        bindAnimalsButton(Animals.Birds,      (ImageButton) findViewById(R.id.button_bird));
+        bindAnimalsButton(Animals.Amphibians, (ImageButton) findViewById(R.id.button_amphibian));
+        bindAnimalsButton(Animals.Arachnids,  (ImageButton) findViewById(R.id.button_arachnid));
+        bindAnimalsButton(Animals.Insects,    (ImageButton) findViewById(R.id.button_insect));
     }
 
-    private void bindAnimalsButton(final Animals animal, Button viewById) {
+    private void bindAnimalsButton(final Animals animal, ImageButton viewById) {
         viewById.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                int switchPoint = Animals.Amphibians.equals(animal) ? 3 : 2;
                 if (relevantAnimals.contains(animal)) {
                     relevantAnimals.remove(animal);
-                    Button[] buttons = animalButtons.get(animal);
-                    for (int i = 2; i < buttons.length; i++) {
-                        buttons[i].setEnabled(false);
+                    ImageButton[] imageButtons = animalButtons.get(animal);
+                    for (int i = 0; i < imageButtons.length; i++) {
+                        imageButtons[i].setImageResource(R.drawable.none);
+                    }
+                    for (int i = switchPoint; i < imageButtons.length; i++) {
+                        imageButtons[i].setEnabled(false);
                     }
                 } else {
                     relevantAnimals.add(animal);
-                    Button[] buttons = animalButtons.get(animal);
-                    for (int i = (Animals.Amphibians.equals(animal) ? 3 : 2); i < buttons.length; i++) {
-                        buttons[i].setEnabled(true);
+                    ImageButton[] imageButtons = animalButtons.get(animal);
+                    AnimalModel model = animalModels.get(animal);
+                    for (int i = 0; i < imageButtons.length; i++) {
+                        imageButtons[i].setImageResource(shortForm(model.elements[i]));
+                    }
+                    for (int i = switchPoint; i < imageButtons.length; i++) {
+                        imageButtons[i].setEnabled(true);
                     }
                 }
                 recalculateDominance();
@@ -200,7 +210,7 @@ public class AnimalElements extends Activity {
         } else {
             resultText = dominantAnimal.name() + " dominates with a score of " + dominantScore;
         }
-        ((TextView)findViewById(R.string.text_dominance)).setText(resultText);
+        ((TextView)findViewById(R.id.text_dominance)).setText(resultText);
     }
 
     public void showElementChooser(DialogInterface.OnClickListener callback) {
@@ -217,16 +227,16 @@ public class AnimalElements extends Activity {
 
     public int shortForm(Elements element) {
         if (element == null) {
-            return R.string.empty_short;
+            return R.drawable.empty;
         }
         switch (element) {
-            case Meat:  return R.string.Meat_short;
-            case Sun:   return R.string.Sun_short;
-            case Seeds: return R.string.Seeds_short;
-            case Water: return R.string.Water_short;
-            case Grub:  return R.string.Grub_short;
-            case Grass: return R.string.Grass_short;
-            default:    return R.string.empty_short;
+            case Meat:  return R.drawable.meat;
+            case Sun:   return R.drawable.sun;
+            case Seeds: return R.drawable.seed;
+            case Water: return R.drawable.water;
+            case Grub:  return R.drawable.grub;
+            case Grass: return R.drawable.grass;
+            default:    return R.drawable.empty;
         }
     }
 }

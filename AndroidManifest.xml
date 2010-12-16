@@ -12,4 +12,5 @@
          </intent-filter>
       </activity>
    </application>
-</manifest> 
+   <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="4" />
+</manifest>

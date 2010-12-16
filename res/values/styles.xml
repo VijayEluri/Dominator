@@ -1,0 +1,30 @@
+<resources>
+   <style name="element">
+      <item name="android:padding">4dip</item>
+      <item name="android:background">#00ffffff</item>
+   </style>
+   <style name="element_meat" parent="element">
+      <item name="android:src">@drawable/meat</item>
+   </style>
+   <style name="element_sun" parent="element">
+      <item name="android:src">@drawable/sun</item>
+   </style>
+   <style name="element_seed" parent="element">
+      <item name="android:src">@drawable/seed</item>
+   </style>
+   <style name="element_water" parent="element">
+      <item name="android:src">@drawable/water</item>
+   </style>
+   <style name="element_grub" parent="element">
+      <item name="android:src">@drawable/grub</item>
+   </style>
+   <style name="element_grass" parent="element">
+      <item name="android:src">@drawable/grass</item>
+   </style>
+   <style name="element_empty" parent="element">
+      <item name="android:src">@drawable/empty</item>
+   </style>
+   <style name="element_none" parent="element">
+      <item name="android:src">@drawable/none</item>
+   </style>
+</resources>
