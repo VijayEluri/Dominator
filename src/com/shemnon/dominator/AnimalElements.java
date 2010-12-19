@@ -18,7 +18,9 @@ package com.shemnon.dominator;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -115,6 +117,41 @@ public class AnimalElements extends Activity {
         animalModels.put(Animals.Insects,    new AnimalModel(Animals.Insects,    Elements.Grass, Elements.Grass, null, null, null, null));
         animalModels.put(null,               new AnimalModel(null,               null,           null,           null, null, null, null));
 
+        relevantAnimals = EnumSet.noneOf(Animals.class);
+        restoreFromPreferences();
+
+        bindButtons();
+    }
+
+    private void restoreFromPreferences() {
+        SharedPreferences preferences = getPreferences(Context.MODE_PRIVATE);
+        String s = preferences.getString("", null);
+        if (s != null) {
+            animalModels.get(null).read(s);
+        }
+        for (Animals animal : Animals.values()) {
+            s = preferences.getString(animal.name(), null);
+            if (s != null) {
+                animalModels.get(animal).read(s);
+            }
+        }
+        for (String animalString : preferences.getString("relevantAnimals", "").split(";")) {
+            try {
+                relevantAnimals.add(Animals.valueOf(animalString));
+            } catch (IllegalArgumentException iae) {
+                // safety bumper
+            }
+        }
+
+        // bind to buttons
+        bindButtonsFromModel(null);
+        for (Animals animal : Animals.values()) {
+            bindButtonsFromModel(animal);
+        }
+
+    }
+
+    private void bindButtons() {
         for (Map.Entry<Animals, ImageButton[]> entry : animalButtons.entrySet()) {
             final Animals animal = entry.getKey();
             int switchPoint = Animals.Amphibians.equals(animal) ? 3 : (animal == null ? 0 : 2);
@@ -144,42 +181,47 @@ public class AnimalElements extends Activity {
             }
         }
 
-        relevantAnimals = EnumSet.noneOf(Animals.class);
         bindAnimalsButton(Animals.Mammals,    (ImageButton) findViewById(R.id.button_mammal));
         bindAnimalsButton(Animals.Reptiles,   (ImageButton) findViewById(R.id.button_reptile));
         bindAnimalsButton(Animals.Birds,      (ImageButton) findViewById(R.id.button_bird));
         bindAnimalsButton(Animals.Amphibians, (ImageButton) findViewById(R.id.button_amphibian));
         bindAnimalsButton(Animals.Arachnids,  (ImageButton) findViewById(R.id.button_arachnid));
-        bindAnimalsButton(Animals.Insects,    (ImageButton) findViewById(R.id.button_insect));
+        bindAnimalsButton(Animals.Insects, (ImageButton) findViewById(R.id.button_insect));
     }
 
     private void bindAnimalsButton(final Animals animal, ImageButton viewById) {
         viewById.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                int switchPoint = Animals.Amphibians.equals(animal) ? 3 : 2;
                 if (relevantAnimals.contains(animal)) {
                     relevantAnimals.remove(animal);
-                    ImageButton[] imageButtons = animalButtons.get(animal);
-                    for (int i = 0; i < imageButtons.length; i++) {
-                        imageButtons[i].setImageResource(R.drawable.none);
-                    }
-                    for (int i = switchPoint; i < imageButtons.length; i++) {
-                        imageButtons[i].setEnabled(false);
-                    }
                 } else {
                     relevantAnimals.add(animal);
-                    ImageButton[] imageButtons = animalButtons.get(animal);
-                    AnimalModel model = animalModels.get(animal);
-                    for (int i = 0; i < imageButtons.length; i++) {
-                        imageButtons[i].setImageResource(shortForm(model.elements[i]));
-                    }
-                    for (int i = switchPoint; i < imageButtons.length; i++) {
-                        imageButtons[i].setEnabled(true);
-                    }
+                    bindButtonsFromModel(animal);
                 }
                 recalculateDominance();
             }
         });
+    }
+
+    private void bindButtonsFromModel(Animals animal) {
+        int switchPoint = Animals.Amphibians.equals(animal) ? 3 : 2;
+        ImageButton[] imageButtons = animalButtons.get(animal);
+        if (animal == null || relevantAnimals.contains(animal)) {
+            AnimalModel model = animalModels.get(animal);
+            for (int i = 0; i < imageButtons.length; i++) {
+                imageButtons[i].setImageResource(shortForm(model.elements[i]));
+            }
+            for (int i = switchPoint; i < imageButtons.length; i++) {
+                imageButtons[i].setEnabled(true);
+            }
+        } else {
+            for (int i = 0; i < imageButtons.length; i++) {
+                imageButtons[i].setImageResource(R.drawable.none);
+            }
+            for (int i = switchPoint; i < imageButtons.length; i++) {
+                imageButtons[i].setEnabled(false);
+            }
+        }
     }
 
     private void recalculateDominance() {
@@ -238,5 +280,23 @@ public class AnimalElements extends Activity {
             case Grass: return R.drawable.grass;
             default:    return R.drawable.empty;
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SharedPreferences storage = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = storage.edit();
+        for (Map.Entry<Animals, AnimalModel> entry : animalModels.entrySet()) {
+            String name = (entry.getKey() == null) ? "" : entry.getKey().name();
+            editor.putString(name, entry.getValue().write());
+        }
+        StringBuilder sb = new StringBuilder();
+        for (Animals relevantAnimal : relevantAnimals) {
+            sb.append(relevantAnimal.name());
+            sb.append(";");
+        }
+        editor.putString("relevantAnimals", sb.toString());
+        editor.commit();
     }
 }

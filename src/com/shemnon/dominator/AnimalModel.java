@@ -36,4 +36,36 @@ public class AnimalModel {
         }
         return count;
     }
+
+    public String write() {
+        StringBuilder sb = new StringBuilder();
+        for (Elements element : elements) {
+            if (element != null) {
+                sb.append(element.name());
+            } else {
+                sb.append(" ");
+            }
+            sb.append(";");
+        }
+        return sb.toString();
+    }
+
+    public void read(String elementsAsString) {
+        String[] strings = elementsAsString.split(";");
+        Elements[] newE = new Elements[strings.length];
+        for (int i = 0; i < strings.length; i++) {
+            Elements e;
+            if (" ".equals(strings[i])) {
+                e = null;
+            } else {
+                try {
+                    e = Elements.valueOf(strings[i]);
+                } catch (IllegalArgumentException iae) {
+                    e = null;
+                }
+            }
+            newE[i] = e;
+        }
+        elements = newE;
+    }
 }
