@@ -149,6 +149,7 @@ public class AnimalElements extends Activity {
             bindButtonsFromModel(animal);
         }
 
+        recalculateDominance();
     }
 
     private void bindButtons() {
@@ -196,8 +197,8 @@ public class AnimalElements extends Activity {
                     relevantAnimals.remove(animal);
                 } else {
                     relevantAnimals.add(animal);
-                    bindButtonsFromModel(animal);
                 }
+                bindButtonsFromModel(animal);
                 recalculateDominance();
             }
         });
