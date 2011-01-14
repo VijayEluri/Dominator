@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.shemnon.dominator"
-          android:versionCode="1"
-          android:versionName="1.0">
-   <application android:label="Dominator" android:icon="@drawable/icon" android:debuggable="true">
+          android:versionCode="3"
+          android:versionName="1.0.2">
+   <application android:label="Dominator" android:icon="@drawable/ic_launcher_dominator">
       <activity android:name="AnimalElements"
                 android:label="Dominator">
          <intent-filter>

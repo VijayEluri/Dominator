@@ -26,10 +26,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import java.util.EnumSet;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class AnimalElements extends Activity {
 
@@ -170,7 +167,7 @@ public class AnimalElements extends Activity {
                             element = Elements.values()[index];
                         }
                         animalModels.get(animal).elements[ImageButtonPos] = element;
-                        ImageButton.setImageResource(shortForm(element));
+                        ImageButton.setImageResource(imageForElement(element));
                         recalculateDominance();
                     }
                 };
@@ -210,7 +207,7 @@ public class AnimalElements extends Activity {
         if (animal == null || relevantAnimals.contains(animal)) {
             AnimalModel model = animalModels.get(animal);
             for (int i = 0; i < imageButtons.length; i++) {
-                imageButtons[i].setImageResource(shortForm(model.elements[i]));
+                imageButtons[i].setImageResource(imageForElement(model.elements[i]));
             }
             for (int i = switchPoint; i < imageButtons.length; i++) {
                 imageButtons[i].setEnabled(true);
@@ -262,13 +259,14 @@ public class AnimalElements extends Activity {
         };
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//        builder.setTitle("Pick a color");
-        builder.setItems(R.array.element_popups, callback);
+        Elements[] listElements = {Elements.Meat, Elements.Sun, Elements.Seeds, Elements.Water, Elements.Grub, Elements.Grass, null};
+        builder.setAdapter(new ElementPopupListAdapter(this, listElements), callback)
+               .setTitle("Select Element");
         AlertDialog alert = builder.create();
         alert.show();
     }
 
-    public int shortForm(Elements element) {
+    public static int imageForElement(Elements element) {
         if (element == null) {
             return R.drawable.empty;
         }
