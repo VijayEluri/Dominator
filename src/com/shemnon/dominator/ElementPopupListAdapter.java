@@ -69,7 +69,14 @@ public class ElementPopupListAdapter extends ArrayAdapter<Elements> {
         imageView.setImageResource(AnimalElements.imageForElement(getItem(position)));
         
         TextView textView = (TextView) view.findViewById(R.id.element_text);
-        textView.setText(getItem(position).name());
+        String name;
+        Elements item = getItem(position);
+        if (item == null) {
+            name = "Empty";
+        } else {
+            name = item.name();
+        }
+        textView.setText(name);
         return view;
     }
 }

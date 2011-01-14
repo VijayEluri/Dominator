@@ -11,6 +11,8 @@
                    android:layout_height="wrap_content"
                    android:src="@drawable/empty"
                    android:paddingRight="6dip"
+                   android:paddingTop="6dip"
+                   android:paddingBottom="6dip"
                 />
  
         <TextView android:id="@+id/element_text"
