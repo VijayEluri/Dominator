@@ -3,7 +3,8 @@
           package="com.shemnon.dominator"
           android:versionCode="3"
           android:versionName="1.0.2">
-   <application android:label="Dominator" android:icon="@drawable/ic_launcher_dominator">
+   <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="25" />
+   <application android:label="Dominator" android:icon="@drawable/ic_launcher_dominator" android:theme="@android:style/Theme.Material">
       <activity android:name="AnimalElements"
                 android:label="Dominator">
          <intent-filter>
@@ -12,5 +13,4 @@
          </intent-filter>
       </activity>
    </application>
-   <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="4" />
 </manifest>

@@ -5,7 +5,7 @@
               android:layout_height="wrap_content"
               style="@android:style/Widget.DropDownItem"
              >
- 
+
         <ImageView android:id="@+id/element_image"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
@@ -14,11 +14,12 @@
                    android:paddingTop="6dip"
                    android:paddingBottom="6dip"
                 />
- 
+
         <TextView android:id="@+id/element_text"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   style="@android:style/TextAppearance.Widget.DropDownItem"
                 />
- 
+
 </LinearLayout>
+ 
