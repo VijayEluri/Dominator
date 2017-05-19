@@ -27,7 +27,7 @@ internal class AnimalModel(theElements: Array<Elements>) {
         var count = 0
         for (myElement in elements) {
             tileElements
-                    .filter { myElement != Elements.Empty}
+                    .filter { myElement != Elements.Empty }
                     .filter { myElement == it }
                     .forEach { count++ }
         }
@@ -37,15 +37,17 @@ internal class AnimalModel(theElements: Array<Elements>) {
     fun write(): String {
         val sb = StringBuilder()
         for (element in elements) {
-            sb.append(element.name)
-            sb.append(";")
+            if (element != Elements.Empty) {
+                sb.append(element.name)
+                sb.append(";")
+            }
         }
         return sb.toString()
     }
 
     fun read(elementsAsString: String) {
         val strings = elementsAsString.split(";".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-        val newE = arrayOf<Elements>()
+        val newE = arrayOf<Elements>(Elements.Empty, Elements.Empty, Elements.Empty, Elements.Empty, Elements.Empty, Elements.Empty)
         for (i in strings.indices) {
             var e: Elements
             try {
