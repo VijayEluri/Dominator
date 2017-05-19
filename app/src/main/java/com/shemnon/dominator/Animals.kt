@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-package com.shemnon.dominator;
+package com.shemnon.dominator
 
-enum Animals {
+internal enum class Animals {
     Mammals,
     Reptiles,
     Birds,
     Amphibians,
     Arachnids,
-    Insects,
-    ;
+    Insects
 }

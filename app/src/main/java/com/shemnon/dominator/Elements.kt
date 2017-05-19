@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-package com.shemnon.dominator;
+package com.shemnon.dominator
 
-enum Elements {
+internal enum class Elements {
     Meat,
     Sun,
     Seeds,
     Water,
     Grub,
-    Grass,
-    ;
+    Grass
 }
