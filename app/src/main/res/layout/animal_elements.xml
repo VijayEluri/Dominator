@@ -1,88 +1,410 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_height="fill_parent"
-            android:layout_width="fill_parent"
-        >
-   <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_height="wrap_content"
-                android:layout_width="fill_parent"
-                android:stretchColumns="*"
-                android:scrollbars="vertical">
-      <TableRow>
-         <ImageButton android:src="@drawable/mammal" android:id="@+id/button_mammal" android:background="#80ffffff" android:padding="4dip" android:gravity="center" />
-         <TextView android:text="0" android:id="@+id/text_score_mammals" android:gravity="center" android:padding="4dip" />
-         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/ME1" android:gravity="center" />
-         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/ME2" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/ME3" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/ME4" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/ME5" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/ME6" android:gravity="center" />
-      </TableRow>
-      <TableRow>
-         <ImageButton android:src="@drawable/reptile" android:id="@+id/button_reptile" android:background="#80ff0000" android:padding="4dip" android:gravity="center" />
-         <TextView android:text="0" android:id="@+id/text_score_reptiles" android:gravity="center" android:padding="4dip" />
-         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/RE1" android:gravity="center" />
-         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/RE2" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/RE3" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/RE4" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/RE5" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/RE6" android:gravity="center" />
-      </TableRow>
-      <TableRow>
-         <ImageButton android:src="@drawable/bird" android:id="@+id/button_bird" android:background="#80ffff80" android:padding="4dip" android:gravity="center" />
-         <TextView android:text="0" android:id="@+id/text_score_birds" android:gravity="center" android:padding="4dip" />
-         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/BE1" android:gravity="center" />
-         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/BE2" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/BE3" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/BE4" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/BE5" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/BE6" android:gravity="center" />
-      </TableRow>
-      <TableRow>
-         <ImageButton android:src="@drawable/amphibian" android:id="@+id/button_amphibian" android:background="#8000ffff" android:padding="4dip" android:gravity="center" />
-         <TextView android:text="0" android:id="@+id/text_score_amphibians" android:gravity="center" android:padding="4dip" />
-         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/AE1" android:gravity="center" />
-         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/AE2" android:gravity="center" />
-         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/AE3" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/AE4" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/AE5" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/AE6" android:gravity="center" />
-      </TableRow>
-      <TableRow>
-         <ImageButton android:src="@drawable/arachnid" android:id="@+id/button_arachnid" android:background="#80000000" android:padding="4dip" android:gravity="center" />
-         <TextView android:text="0" android:id="@+id/text_score_arachnids" android:gravity="center" android:padding="4dip" />
-         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/SE1" android:gravity="center" />
-         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/SE2" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/SE3" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/SE4" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/SE5" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/SE6" android:gravity="center" />
-      </TableRow>
-      <TableRow>
-         <ImageButton android:src="@drawable/insect" android:id="@+id/button_insect" android:background="#8000ff00" android:padding="4dip" android:gravity="center" />
-         <TextView android:text="0" android:id="@+id/text_score_insects" android:gravity="center" android:padding="4dip" />
-         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/IE1" android:gravity="center" />
-         <ImageButton android:enabled="false" style="@style/element_none" android:id="@+id/IE2" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/IE3" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/IE4" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/IE5" android:gravity="center" />
-         <ImageButton style="@style/element_none" android:id="@+id/IE6" android:gravity="center" />
-      </TableRow>
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-      <TextView android:text="@string/empty" />
-      <TextView android:text="@string/empty" android:id="@+id/text_dominance" />
-      <TextView android:text="@string/empty" />
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:stretchColumns="*">
 
-      <TableRow>
-         <TextView android:text="@string/Hex" android:gravity="center" />
-         <TextView android:text="@string/empty" android:gravity="center" />
-         <ImageButton style="@style/element_empty" android:id="@+id/HE1" android:gravity="center" />
-         <ImageButton style="@style/element_empty" android:id="@+id/HE2" android:gravity="center" />
-         <ImageButton style="@style/element_empty" android:id="@+id/HE3" android:gravity="center" />
-         <ImageButton style="@style/element_empty" android:id="@+id/HE4" android:gravity="center" />
-         <ImageButton style="@style/element_empty" android:id="@+id/HE5" android:gravity="center" />
-         <ImageButton style="@style/element_empty" android:id="@+id/HE6" android:gravity="center" />
-      </TableRow>
+        <TableRow>
 
-   </TableLayout>
+            <ImageButton
+                android:id="@+id/button_mammal"
+                android:background="#80ffffff"
+                android:contentDescription="@string/Mammals"
+                android:gravity="center"
+                android:padding="4dip"
+                android:src="@drawable/mammal" />
+
+            <TextView
+                android:id="@+id/text_score_mammals"
+                android:gravity="center"
+                android:padding="4dip"
+                android:text="@string/score_0" />
+
+            <ImageButton
+                android:id="@+id/ME1"
+                style="@style/element_none"
+                android:enabled="false"
+                android:gravity="center"
+                android:contentDescription="@string/element_1" />
+
+            <ImageButton
+                android:id="@+id/ME2"
+                style="@style/element_none"
+                android:enabled="false"
+                android:gravity="center"
+                android:contentDescription="@string/element_2" />
+
+            <ImageButton
+                android:id="@+id/ME3"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_3" />
+
+            <ImageButton
+                android:id="@+id/ME4"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_4" />
+
+            <ImageButton
+                android:id="@+id/ME5"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_5" />
+
+            <ImageButton
+                android:id="@+id/ME6"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_6" />
+        </TableRow>
+
+        <TableRow>
+
+            <ImageButton
+                android:id="@+id/button_reptile"
+                android:background="#80ff0000"
+                android:gravity="center"
+                android:padding="4dip"
+                android:src="@drawable/reptile"
+                android:contentDescription="@string/Reptiles" />
+
+            <TextView
+                android:id="@+id/text_score_reptiles"
+                android:gravity="center"
+                android:padding="4dip"
+                android:text="@string/score_0" />
+
+            <ImageButton
+                android:id="@+id/RE1"
+                style="@style/element_none"
+                android:enabled="false"
+                android:gravity="center"
+                android:contentDescription="@string/element_1" />
+
+            <ImageButton
+                android:id="@+id/RE2"
+                style="@style/element_none"
+                android:enabled="false"
+                android:gravity="center"
+                android:contentDescription="@string/element_2" />
+
+            <ImageButton
+                android:id="@+id/RE3"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_3" />
+
+            <ImageButton
+                android:id="@+id/RE4"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_4" />
+
+            <ImageButton
+                android:id="@+id/RE5"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_5" />
+
+            <ImageButton
+                android:id="@+id/RE6"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_6" />
+        </TableRow>
+
+        <TableRow>
+
+            <ImageButton
+                android:id="@+id/button_bird"
+                android:background="#80ffff80"
+                android:gravity="center"
+                android:padding="4dip"
+                android:src="@drawable/bird"
+                android:contentDescription="@string/Birds" />
+
+            <TextView
+                android:id="@+id/text_score_birds"
+                android:gravity="center"
+                android:padding="4dip"
+                android:text="@string/score_0" />
+
+            <ImageButton
+                android:id="@+id/BE1"
+                style="@style/element_none"
+                android:enabled="false"
+                android:gravity="center"
+                android:contentDescription="@string/element_1" />
+
+            <ImageButton
+                android:id="@+id/BE2"
+                style="@style/element_none"
+                android:enabled="false"
+                android:gravity="center"
+                android:contentDescription="@string/element_2" />
+
+            <ImageButton
+                android:id="@+id/BE3"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_3" />
+
+            <ImageButton
+                android:id="@+id/BE4"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_4" />
+
+            <ImageButton
+                android:id="@+id/BE5"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_5" />
+
+            <ImageButton
+                android:id="@+id/BE6"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_6" />
+        </TableRow>
+
+        <TableRow>
+
+            <ImageButton
+                android:id="@+id/button_amphibian"
+                android:background="#8000ffff"
+                android:gravity="center"
+                android:padding="4dip"
+                android:src="@drawable/amphibian"
+                android:contentDescription="@string/Amphibians" />
+
+            <TextView
+                android:id="@+id/text_score_amphibians"
+                android:gravity="center"
+                android:padding="4dip"
+                android:text="@string/score_0" />
+
+            <ImageButton
+                android:id="@+id/AE1"
+                style="@style/element_none"
+                android:enabled="false"
+                android:gravity="center"
+                android:contentDescription="@string/element_1" />
+
+            <ImageButton
+                android:id="@+id/AE2"
+                style="@style/element_none"
+                android:enabled="false"
+                android:gravity="center"
+                android:contentDescription="@string/element_2" />
+
+            <ImageButton
+                android:id="@+id/AE3"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_3" />
+
+            <ImageButton
+                android:id="@+id/AE4"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_4" />
+
+            <ImageButton
+                android:id="@+id/AE5"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_5" />
+
+            <ImageButton
+                android:id="@+id/AE6"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_6" />
+        </TableRow>
+
+        <TableRow>
+
+            <ImageButton
+                android:id="@+id/button_arachnid"
+                android:background="#80000000"
+                android:gravity="center"
+                android:padding="4dip"
+                android:src="@drawable/arachnid"
+                android:contentDescription="@string/Arachnids" />
+
+            <TextView
+                android:id="@+id/text_score_arachnids"
+                android:gravity="center"
+                android:padding="4dip"
+                android:text="@string/score_0" />
+
+            <ImageButton
+                android:id="@+id/SE1"
+                style="@style/element_none"
+                android:enabled="false"
+                android:gravity="center"
+                android:contentDescription="@string/element_1" />
+
+            <ImageButton
+                android:id="@+id/SE2"
+                style="@style/element_none"
+                android:enabled="false"
+                android:gravity="center"
+                android:contentDescription="@string/element_2" />
+
+            <ImageButton
+                android:id="@+id/SE3"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_3" />
+
+            <ImageButton
+                android:id="@+id/SE4"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_4" />
+
+            <ImageButton
+                android:id="@+id/SE5"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_5" />
+
+            <ImageButton
+                android:id="@+id/SE6"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_6" />
+        </TableRow>
+
+        <TableRow>
+
+            <ImageButton
+                android:id="@+id/button_insect"
+                android:background="#8000ff00"
+                android:gravity="center"
+                android:padding="4dip"
+                android:src="@drawable/insect"
+                android:contentDescription="@string/Insects" />
+
+            <TextView
+                android:id="@+id/text_score_insects"
+                android:gravity="center"
+                android:padding="4dip"
+                android:text="@string/score_0" />
+
+            <ImageButton
+                android:id="@+id/IE1"
+                style="@style/element_none"
+                android:enabled="false"
+                android:gravity="center"
+                android:contentDescription="@string/element_1" />
+
+            <ImageButton
+                android:id="@+id/IE2"
+                style="@style/element_none"
+                android:enabled="false"
+                android:gravity="center"
+                android:contentDescription="@string/element_2" />
+
+            <ImageButton
+                android:id="@+id/IE3"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_3" />
+
+            <ImageButton
+                android:id="@+id/IE4"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_4" />
+
+            <ImageButton
+                android:id="@+id/IE5"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_5" />
+
+            <ImageButton
+                android:id="@+id/IE6"
+                style="@style/element_none"
+                android:gravity="center"
+                android:contentDescription="@string/element_6" />
+        </TableRow>
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/empty" />
+
+        <TextView
+            android:id="@+id/text_dominance"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/empty" />
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/empty" />
+
+        <TableRow android:gravity="center_vertical">
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="start"
+                android:text="@string/Hex" />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text="@string/empty" />
+
+            <ImageButton
+                android:id="@+id/HE1"
+                style="@style/element_empty"
+                android:gravity="center"
+                android:contentDescription="@string/element_1" />
+
+            <ImageButton
+                android:id="@+id/HE2"
+                style="@style/element_empty"
+                android:gravity="center"
+                android:contentDescription="@string/element_2" />
+
+            <ImageButton
+                android:id="@+id/HE3"
+                style="@style/element_empty"
+                android:gravity="center"
+                android:contentDescription="@string/element_3" />
+
+            <ImageButton
+                android:id="@+id/HE4"
+                style="@style/element_empty"
+                android:gravity="center"
+                android:contentDescription="@string/element_4" />
+
+            <ImageButton
+                android:id="@+id/HE5"
+                style="@style/element_empty"
+                android:gravity="center"
+                android:contentDescription="@string/element_5" />
+
+            <ImageButton
+                android:id="@+id/HE6"
+                style="@style/element_empty"
+                android:gravity="center"
+                android:contentDescription="@string/element_6" />
+        </TableRow>
+
+    </TableLayout>
 </ScrollView>
