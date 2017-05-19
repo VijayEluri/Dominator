@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.shemnon.dominator"
-          android:versionCode="3"
-          android:versionName="1.0.2">
-   <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="25" />
-   <application android:label="Dominator" android:icon="@drawable/ic_launcher_dominator" android:theme="@android:style/Theme.Material">
-      <activity android:name="AnimalElements"
-                android:label="Dominator">
-         <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-         </intent-filter>
-      </activity>
-   </application>
+    package="com.shemnon.dominator"
+    android:versionCode="3"
+    android:versionName="1.0.2">
+
+    <application
+        android:allowBackup="true"
+        android:fullBackupContent="false"
+        android:icon="@drawable/ic_launcher_dominator"
+        android:label="Dominator"
+        android:theme="@android:style/Theme.Material">
+        <activity
+            android:name="AnimalElements"
+            android:label="Dominator">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
 </manifest>

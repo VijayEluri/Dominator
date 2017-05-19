@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2010 Daniel Ferrin
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,16 +16,14 @@
 
 package com.shemnon.dominator;
 
-public class AnimalModel {
-    Animals animal;
+class AnimalModel {
     Elements[] elements;
 
-    public AnimalModel(Animals theAnimal, Elements... theElements) {
-        animal = theAnimal;
+    AnimalModel(Elements... theElements) {
         elements = theElements;
     }
 
-    public int scoreDominance(Elements... tileElements) {
+    int scoreDominance(Elements... tileElements) {
         int count = 0;
         for (Elements myElement : elements) {
             for (Elements theirElement : tileElements) {
@@ -37,7 +35,7 @@ public class AnimalModel {
         return count;
     }
 
-    public String write() {
+    String write() {
         StringBuilder sb = new StringBuilder();
         for (Elements element : elements) {
             if (element != null) {
@@ -50,7 +48,7 @@ public class AnimalModel {
         return sb.toString();
     }
 
-    public void read(String elementsAsString) {
+    void read(String elementsAsString) {
         String[] strings = elementsAsString.split(";");
         Elements[] newE = new Elements[strings.length];
         for (int i = 0; i < strings.length; i++) {

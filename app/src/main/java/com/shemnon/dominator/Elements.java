@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2010 Daniel Ferrin
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +16,7 @@
 
 package com.shemnon.dominator;
 
-public enum Elements {
+enum Elements {
     Meat,
     Sun,
     Seeds,

@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2010 Daniel Ferrin
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -38,7 +38,7 @@ public class AnimalElements extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.animal_elements);
-        animalButtons = new HashMap<Animals, ImageButton[]>();
+        animalButtons = new HashMap<>();
 
         animalButtons.put(Animals.Mammals, new ImageButton[] {
                 (ImageButton) findViewById(R.id.ME1),
@@ -97,7 +97,7 @@ public class AnimalElements extends Activity {
                 (ImageButton) findViewById(R.id.HE6),
         });
 
-        scores = new HashMap<Animals, TextView>();
+        scores = new HashMap<>();
         scores.put(Animals.Mammals,    (TextView) findViewById(R.id.text_score_mammals));
         scores.put(Animals.Reptiles,   (TextView) findViewById(R.id.text_score_reptiles));
         scores.put(Animals.Birds,      (TextView) findViewById(R.id.text_score_birds));
@@ -105,14 +105,14 @@ public class AnimalElements extends Activity {
         scores.put(Animals.Arachnids,  (TextView) findViewById(R.id.text_score_arachnids));
         scores.put(Animals.Insects,    (TextView) findViewById(R.id.text_score_insects));
 
-        animalModels = new HashMap<Animals, AnimalModel>();
-        animalModels.put(Animals.Mammals,    new AnimalModel(Animals.Mammals,    Elements.Meat,  Elements.Meat,  null, null, null, null));
-        animalModels.put(Animals.Reptiles,   new AnimalModel(Animals.Reptiles,   Elements.Sun,   Elements.Sun,   null, null, null, null));
-        animalModels.put(Animals.Birds,      new AnimalModel(Animals.Birds,      Elements.Seeds, Elements.Seeds, null, null, null, null));
-        animalModels.put(Animals.Amphibians, new AnimalModel(Animals.Amphibians, Elements.Water, Elements.Water, Elements.Water, null, null, null));
-        animalModels.put(Animals.Arachnids,  new AnimalModel(Animals.Arachnids,  Elements.Grub,  Elements.Grub,  null, null, null, null));
-        animalModels.put(Animals.Insects,    new AnimalModel(Animals.Insects,    Elements.Grass, Elements.Grass, null, null, null, null));
-        animalModels.put(null,               new AnimalModel(null,               null,           null,           null, null, null, null));
+        animalModels = new HashMap<>();
+        animalModels.put(Animals.Mammals,    new AnimalModel(Elements.Meat,  Elements.Meat,  null, null, null, null));
+        animalModels.put(Animals.Reptiles,   new AnimalModel(Elements.Sun,   Elements.Sun,   null, null, null, null));
+        animalModels.put(Animals.Birds,      new AnimalModel(Elements.Seeds, Elements.Seeds, null, null, null, null));
+        animalModels.put(Animals.Amphibians, new AnimalModel(Elements.Water, Elements.Water, Elements.Water, null, null, null));
+        animalModels.put(Animals.Arachnids,  new AnimalModel(Elements.Grub,  Elements.Grub,  null, null, null, null));
+        animalModels.put(Animals.Insects,    new AnimalModel(Elements.Grass, Elements.Grass, null, null, null, null));
+        animalModels.put(null,               new AnimalModel(null,           null,           null, null, null, null));
 
         relevantAnimals = EnumSet.noneOf(Animals.class);
         restoreFromPreferences();
@@ -213,8 +213,8 @@ public class AnimalElements extends Activity {
                 imageButtons[i].setEnabled(true);
             }
         } else {
-            for (int i = 0; i < imageButtons.length; i++) {
-                imageButtons[i].setImageResource(R.drawable.none);
+            for (ImageButton imageButton : imageButtons) {
+                imageButton.setImageResource(R.drawable.none);
             }
             for (int i = switchPoint; i < imageButtons.length; i++) {
                 imageButtons[i].setEnabled(false);
@@ -240,7 +240,8 @@ public class AnimalElements extends Activity {
             } else {
                 thisScore = 0;
             }
-            scores.get(animal).setText(Integer.toString(thisScore));
+            String scoreString = Integer.toString(thisScore);
+            scores.get(animal).setText(scoreString);
         }
         String resultText;
         if (relevantAnimals.isEmpty()) {
@@ -254,9 +255,6 @@ public class AnimalElements extends Activity {
     }
 
     public void showElementChooser(DialogInterface.OnClickListener callback) {
-        final CharSequence[] items = {
-
-        };
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         Elements[] listElements = {Elements.Meat, Elements.Sun, Elements.Seeds, Elements.Water, Elements.Grub, Elements.Grass, null};
@@ -296,6 +294,6 @@ public class AnimalElements extends Activity {
             sb.append(";");
         }
         editor.putString("relevantAnimals", sb.toString());
-        editor.commit();
+        editor.apply();
     }
 }
