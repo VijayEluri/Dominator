@@ -16,18 +16,19 @@
 
 package com.shemnon.dominator
 
-internal class AnimalModel(vararg theElements: Elements?) {
-    var elements: Array<Elements?>
+internal class AnimalModel(theElements: Array<Elements>) {
+    var elements: Array<Elements>
 
     init {
-        elements = theElements as Array<Elements?>
+        elements = theElements
     }
 
-    fun scoreDominance(tileElements: Array<Elements?>): Int {
+    fun scoreDominance(tileElements: Array<Elements>): Int {
         var count = 0
         for (myElement in elements) {
             tileElements
-                    .filter { myElement != null && myElement == it }
+                    .filter { myElement != Elements.Empty}
+                    .filter { myElement == it }
                     .forEach { count++ }
         }
         return count
@@ -36,11 +37,7 @@ internal class AnimalModel(vararg theElements: Elements?) {
     fun write(): String {
         val sb = StringBuilder()
         for (element in elements) {
-            if (element != null) {
-                sb.append(element.name)
-            } else {
-                sb.append(" ")
-            }
+            sb.append(element.name)
             sb.append(";")
         }
         return sb.toString()
@@ -48,18 +45,13 @@ internal class AnimalModel(vararg theElements: Elements?) {
 
     fun read(elementsAsString: String) {
         val strings = elementsAsString.split(";".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-        val newE = arrayOfNulls<Elements>(strings.size)
+        val newE = arrayOf<Elements>()
         for (i in strings.indices) {
-            var e: Elements?
-            if (" " == strings[i]) {
-                e = null
-            } else {
-                try {
-                    e = Elements.valueOf(strings[i])
-                } catch (iae: IllegalArgumentException) {
-                    e = null
-                }
-
+            var e: Elements
+            try {
+                e = Elements.valueOf(strings[i])
+            } catch (iae: IllegalArgumentException) {
+                e = Elements.Empty
             }
             newE[i] = e
         }

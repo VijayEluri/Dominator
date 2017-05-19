@@ -28,8 +28,8 @@ import java.util.*
 
 class AnimalElements : Activity() {
 
-    internal var animalButtons: MutableMap<Animals?, Array<ImageButton>> = HashMap()
-    internal var animalModels: MutableMap<Animals?, AnimalModel> = HashMap()
+    internal var animalButtons: MutableMap<Animals, Array<ImageButton>> = HashMap()
+    internal var animalModels: MutableMap<Animals, AnimalModel> = HashMap()
     internal var scores: MutableMap<Animals, TextView> = HashMap()
     internal var relevantAnimals: MutableSet<Animals> = HashSet()
 
@@ -43,7 +43,7 @@ class AnimalElements : Activity() {
         animalButtons.put(Animals.Amphibians, arrayOf(findViewById(R.id.AE1) as ImageButton, findViewById(R.id.AE2) as ImageButton, findViewById(R.id.AE3) as ImageButton, findViewById(R.id.AE4) as ImageButton, findViewById(R.id.AE5) as ImageButton, findViewById(R.id.AE6) as ImageButton))
         animalButtons.put(Animals.Arachnids, arrayOf(findViewById(R.id.SE1) as ImageButton, findViewById(R.id.SE2) as ImageButton, findViewById(R.id.SE3) as ImageButton, findViewById(R.id.SE4) as ImageButton, findViewById(R.id.SE5) as ImageButton, findViewById(R.id.SE6) as ImageButton))
         animalButtons.put(Animals.Insects, arrayOf(findViewById(R.id.IE1) as ImageButton, findViewById(R.id.IE2) as ImageButton, findViewById(R.id.IE3) as ImageButton, findViewById(R.id.IE4) as ImageButton, findViewById(R.id.IE5) as ImageButton, findViewById(R.id.IE6) as ImageButton))
-        animalButtons.put(null, arrayOf(findViewById(R.id.HE1) as ImageButton, findViewById(R.id.HE2) as ImageButton, findViewById(R.id.HE3) as ImageButton, findViewById(R.id.HE4) as ImageButton, findViewById(R.id.HE5) as ImageButton, findViewById(R.id.HE6) as ImageButton))
+        animalButtons.put(Animals.None, arrayOf(findViewById(R.id.HE1) as ImageButton, findViewById(R.id.HE2) as ImageButton, findViewById(R.id.HE3) as ImageButton, findViewById(R.id.HE4) as ImageButton, findViewById(R.id.HE5) as ImageButton, findViewById(R.id.HE6) as ImageButton))
 
         scores = HashMap<Animals, TextView>()
         scores.put(Animals.Mammals, findViewById(R.id.text_score_mammals) as TextView)
@@ -53,13 +53,13 @@ class AnimalElements : Activity() {
         scores.put(Animals.Arachnids, findViewById(R.id.text_score_arachnids) as TextView)
         scores.put(Animals.Insects, findViewById(R.id.text_score_insects) as TextView)
 
-        animalModels.put(Animals.Mammals, AnimalModel(Elements.Meat, Elements.Meat, null, null, null, null))
-        animalModels.put(Animals.Reptiles, AnimalModel(Elements.Sun, Elements.Sun, null, null, null, null))
-        animalModels.put(Animals.Birds, AnimalModel(Elements.Seeds, Elements.Seeds, null, null, null, null))
-        animalModels.put(Animals.Amphibians, AnimalModel(Elements.Water, Elements.Water, Elements.Water, null, null, null))
-        animalModels.put(Animals.Arachnids, AnimalModel(Elements.Grub, Elements.Grub, null, null, null, null))
-        animalModels.put(Animals.Insects, AnimalModel(Elements.Grass, Elements.Grass, null, null, null, null))
-        animalModels.put(null, AnimalModel(null, null, null, null, null, null))
+        animalModels.put(Animals.Mammals, AnimalModel(arrayOf(Elements.Meat, Elements.Meat, Elements.Empty, Elements.Empty, Elements.Empty, Elements.Empty)))
+        animalModels.put(Animals.Reptiles, AnimalModel(arrayOf(Elements.Sun, Elements.Sun, Elements.Empty, Elements.Empty, Elements.Empty, Elements.Empty)))
+        animalModels.put(Animals.Birds, AnimalModel(arrayOf(Elements.Seeds, Elements.Seeds, Elements.Empty, Elements.Empty, Elements.Empty, Elements.Empty)))
+        animalModels.put(Animals.Amphibians, AnimalModel(arrayOf(Elements.Water, Elements.Water, Elements.Water, Elements.Empty, Elements.Empty, Elements.Empty)))
+        animalModels.put(Animals.Arachnids, AnimalModel(arrayOf(Elements.Grub, Elements.Grub, Elements.Empty, Elements.Empty, Elements.Empty, Elements.Empty)))
+        animalModels.put(Animals.Insects, AnimalModel(arrayOf(Elements.Grass, Elements.Grass, Elements.Empty, Elements.Empty, Elements.Empty, Elements.Empty)))
+        animalModels.put(Animals.None, AnimalModel(arrayOf(Elements.Empty, Elements.Empty, Elements.Empty, Elements.Empty, Elements.Empty, Elements.Empty)))
 
         restoreFromPreferences()
 
@@ -70,7 +70,7 @@ class AnimalElements : Activity() {
         val preferences = getPreferences(Context.MODE_PRIVATE)
         var s = preferences.getString("", null)
         if (s != null) {
-            animalModels[null]?.read(s)
+            animalModels[Animals.None]?.read(s)
         }
         for (animal in Animals.values()) {
             s = preferences.getString(animal.name, null)
@@ -88,7 +88,7 @@ class AnimalElements : Activity() {
         }
 
         // bind to buttons
-        bindButtonsFromModel(null)
+        bindButtonsFromModel(Animals.None)
         for (animal in Animals.values()) {
             bindButtonsFromModel(animal)
         }
@@ -98,15 +98,15 @@ class AnimalElements : Activity() {
 
     private fun bindButtons() {
         for ((animal, ImageButtons) in animalButtons) {
-            val switchPoint = if (Animals.Amphibians == animal) 3 else if (animal == null) 0 else 2
+            val switchPoint = if (Animals.Amphibians == animal) 3 else if (Animals.None == animal) 0 else 2
 
             for (i in ImageButtons.size - 1 downTo switchPoint) {
                 val ImageButton = ImageButtons[i]
                 val ImageButtonPos = i
                 val callback = DialogInterface.OnClickListener { _, index ->
-                    val element: Elements?
+                    val element: Elements
                     if (index < 0 || index >= Elements.values().size) {
-                        element = null
+                        element = Elements.Empty
                     } else {
                         element = Elements.values()[index]
                     }
@@ -138,10 +138,10 @@ class AnimalElements : Activity() {
         }
     }
 
-    private fun bindButtonsFromModel(animal: Animals?) {
+    private fun bindButtonsFromModel(animal: Animals) {
         val switchPoint = if (Animals.Amphibians == animal) 3 else 2
         val imageButtons = animalButtons[animal]
-        if (animal == null || relevantAnimals.contains(animal)) {
+        if (animal == Animals.None || relevantAnimals.contains(animal)) {
             val model = animalModels[animal]
             for (i in imageButtons!!.indices) {
                 imageButtons[i].setImageResource(imageForElement(model!!.elements[i]))
@@ -162,7 +162,7 @@ class AnimalElements : Activity() {
     private fun recalculateDominance() {
         var dominantAnimal: Animals? = null
         var dominantScore = -1
-        val hexElements = animalModels[null]!!.elements
+        val hexElements = animalModels[Animals.None]!!.elements
         for (animal in Animals.values()) {
             val thisScore: Int
             if (relevantAnimals.contains(animal)) {
@@ -178,7 +178,7 @@ class AnimalElements : Activity() {
                 thisScore = 0
             }
             val scoreString = Integer.toString(thisScore)
-            scores[animal]!!.text = scoreString
+            scores[animal]?.text = scoreString
         }
         val resultText: String
         if (relevantAnimals.isEmpty()) {
@@ -206,7 +206,7 @@ class AnimalElements : Activity() {
         val storage = getPreferences(Context.MODE_PRIVATE)
         val editor = storage.edit()
         for ((key, value) in animalModels) {
-            val name = key?.name ?: ""
+            val name = key.name
             editor.putString(name, value.write())
         }
         val sb = StringBuilder()

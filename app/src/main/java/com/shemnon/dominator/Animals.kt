@@ -22,5 +22,6 @@ internal enum class Animals {
     Birds,
     Amphibians,
     Arachnids,
-    Insects
+    Insects,
+    None
 }

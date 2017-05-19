@@ -22,5 +22,6 @@ internal enum class Elements {
     Seeds,
     Water,
     Grub,
-    Grass
+    Grass,
+    Empty
 }
